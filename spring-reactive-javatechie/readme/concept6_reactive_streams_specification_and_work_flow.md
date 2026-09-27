@@ -9,7 +9,9 @@ specifications are it should have
 
 Publisher/Producer: Publisher is a datasource who will always publish an event.
 
-It is an interface contains only one method subscribe which helps to subscribe into publisher.
+![img_11.png](img_11.png)
+
+This interface has only method called subscribe. Now, Subscriber need to call this subscribe method to register into Publisher.
 
 Subscriber or Consumer:
 
