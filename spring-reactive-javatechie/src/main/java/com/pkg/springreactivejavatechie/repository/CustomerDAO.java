@@ -60,4 +60,10 @@ public class CustomerDAO {
                 .doOnNext(i -> System.out.println("processing count in stream flow : " + i))
                 .map(i -> new Customer(i, "customer" + i));
     }
+
+    public Flux<Customer> getCustomersListUsingRouterAndHandler()  {
+        return Flux.range(1,50)
+                .doOnNext(i -> System.out.println("processing count in stream flow : " + i))
+                .map(i -> new Customer(i, "customer" + i));
+    }
 }
