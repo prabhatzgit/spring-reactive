@@ -1,0 +1,158 @@
+{
+  "info": {
+    "_postman_id": "91782eb3-db19-46db-8951-f67b82722c23",
+    "name": "spring-reactive-mongodb-crud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1314281"
+  },
+  "item": [
+    {
+      "name": "CREATE: create product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Tablet\",\r\n    \"qty\": 1,\r\n    \"price\": 50000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "READ: get product",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "READ: get product based on range",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/products/product-range?min=5000&max=30000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "products",
+            "product-range"
+          ],
+          "query": [
+            {
+              "key": "min",
+              "value": "5000"
+            },
+            {
+              "key": "max",
+              "value": "30000"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "READ: get product based on id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/products/6aba39c88fcfe7a8188c8e76",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "products",
+            "6aba39c88fcfe7a8188c8e76"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UPDATE: update product",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Laptop\",\r\n    \"qty\": 10,\r\n    \"price\": 1000000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/products/update/6aba3a568fcfe7a8188c8e78",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "products",
+            "update",
+            "6aba3a568fcfe7a8188c8e78"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/products/delete/6aba3a568fcfe7a8188c8e78",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "products",
+            "delete",
+            "6aba3a568fcfe7a8188c8e78"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

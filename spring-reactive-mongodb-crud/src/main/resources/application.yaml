@@ -1,0 +1,7 @@
+spring:
+  application:
+    name=spring-reactive-mongodb-crud
+  mongodb:
+    database: Products
+    host: localhost
+    port: 27017
