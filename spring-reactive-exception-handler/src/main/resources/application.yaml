@@ -1,0 +1,8 @@
+spring:
+  application:
+    name=spring-reactive-exception-handler
+  web:
+    error:
+      include-message: always
+
+# To display the message always which returns or throws by application

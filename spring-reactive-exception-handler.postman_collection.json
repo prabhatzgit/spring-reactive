@@ -1,0 +1,137 @@
+{
+  "info": {
+    "_postman_id": "16911f56-1066-4737-b859-c0f0590d83ea",
+    "name": "spring-reactive-exception-handler",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1314281"
+  },
+  "item": [
+    {
+      "name": "1. get books using traditional approach",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books"
+          ]
+        },
+        "description": "``` json\n[\n    {\n        \"bookId\": 1,\n        \"name\": \"Book1\",\n        \"price\": 0.024444610116695742\n    },\n    {\n        \"bookId\": 2,\n        \"name\": \"Book2\",\n        \"price\": 0.3108212387440247\n    },\n    {\n        \"bookId\": 3,\n        \"name\": \"Book3\",\n        \"price\": 0.4642195777236354\n    },\n    {\n        \"bookId\": 4,\n        \"name\": \"Book4\",\n        \"price\": 0.9238108698108871\n    },\n    {\n        \"bookId\": 5,\n        \"name\": \"Book5\",\n        \"price\": 0.673067591859555\n    },\n    {\n        \"bookId\": 6,\n        \"name\": \"Book6\",\n        \"price\": 0.10307334484414543\n    },\n    {\n        \"bookId\": 7,\n        \"name\": \"Book7\",\n        \"price\": 0.3086172732540188\n    },\n    {\n        \"bookId\": 8,\n        \"name\": \"Book8\",\n        \"price\": 0.1971167137241443\n    },\n    {\n        \"bookId\": 9,\n        \"name\": \"Book9\",\n        \"price\": 0.5493944589551707\n    },\n    {\n        \"bookId\": 10,\n        \"name\": \"Book10\",\n        \"price\": 0.5839341763458835\n    },\n    {\n        \"bookId\": 11,\n        \"name\": \"Book11\",\n        \"price\": 0.8878855821498587\n    },\n    {\n        \"bookId\": 12,\n        \"name\": \"Book12\",\n        \"price\": 0.7939075557866588\n    },\n    {\n        \"bookId\": 13,\n        \"name\": \"Book13\",\n        \"price\": 0.03345227029061759\n    },\n    {\n        \"bookId\": 14,\n        \"name\": \"Book14\",\n        \"price\": 0.8792273621216474\n    },\n    {\n        \"bookId\": 15,\n        \"name\": \"Book15\",\n        \"price\": 0.5454176546866131\n    },\n    {\n        \"bookId\": 16,\n        \"name\": \"Book16\",\n        \"price\": 0.14300619472668696\n    },\n    {\n        \"bookId\": 17,\n        \"name\": \"Book17\",\n        \"price\": 0.30611320525187025\n    },\n    {\n        \"bookId\": 18,\n        \"name\": \"Book18\",\n        \"price\": 0.8286073337093547\n    },\n    {\n        \"bookId\": 19,\n        \"name\": \"Book19\",\n        \"price\": 0.04360716548050414\n    },\n    {\n        \"bookId\": 20,\n        \"name\": \"Book20\",\n        \"price\": 0.4526353537299934\n    }\n]\n\n ```"
+      },
+      "response": []
+    },
+    {
+      "name": "2. get books by id using traditional approach",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/books/20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books",
+            "20"
+          ]
+        },
+        "description": "``` json\n{\n    \"bookId\": 20,\n    \"name\": \"Book20\",\n    \"price\": 0.7261063891330634\n}\n\n ```"
+      },
+      "response": []
+    },
+    {
+      "name": "3. check global exception handler message using traditional approach",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/books/21",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "books",
+            "21"
+          ]
+        },
+        "description": "In static response, we have only 20 records. If we fetch beyond 20 records, we get bad request.  \n  \nAs we handle this exption, we get 200 OK response.  \n  \n{    \"error message\": \"Book not found with id 21\",    \"status\": \"400 BAD_REQUEST\"}"
+      },
+      "response": []
+    },
+    {
+      "name": "4. get books using spring reactive approach",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/route/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "route",
+            "books"
+          ]
+        },
+        "description": "``` json\n[\n    {\n        \"bookId\": 1,\n        \"name\": \"Book1\",\n        \"price\": 0.0880489121114304\n    },\n    {\n        \"bookId\": 2,\n        \"name\": \"Book2\",\n        \"price\": 0.8154051261059079\n    },\n    {\n        \"bookId\": 3,\n        \"name\": \"Book3\",\n        \"price\": 0.004298332231880364\n    },\n    {\n        \"bookId\": 4,\n        \"name\": \"Book4\",\n        \"price\": 0.7357365213820283\n    },\n    {\n        \"bookId\": 5,\n        \"name\": \"Book5\",\n        \"price\": 0.8057213502883579\n    },\n    {\n        \"bookId\": 6,\n        \"name\": \"Book6\",\n        \"price\": 0.14794943575146835\n    },\n    {\n        \"bookId\": 7,\n        \"name\": \"Book7\",\n        \"price\": 0.5462193841635415\n    },\n    {\n        \"bookId\": 8,\n        \"name\": \"Book8\",\n        \"price\": 0.27946362657824697\n    },\n    {\n        \"bookId\": 9,\n        \"name\": \"Book9\",\n        \"price\": 0.08005293668830205\n    },\n    {\n        \"bookId\": 10,\n        \"name\": \"Book10\",\n        \"price\": 0.4474281931830477\n    },\n    {\n        \"bookId\": 11,\n        \"name\": \"Book11\",\n        \"price\": 0.1462131508258011\n    },\n    {\n        \"bookId\": 12,\n        \"name\": \"Book12\",\n        \"price\": 0.3483791319993884\n    },\n    {\n        \"bookId\": 13,\n        \"name\": \"Book13\",\n        \"price\": 0.78247584232164\n    },\n    {\n        \"bookId\": 14,\n        \"name\": \"Book14\",\n        \"price\": 0.4182644566358611\n    },\n    {\n        \"bookId\": 15,\n        \"name\": \"Book15\",\n        \"price\": 0.0407147561984007\n    },\n    {\n        \"bookId\": 16,\n        \"name\": \"Book16\",\n        \"price\": 0.47769149132261457\n    },\n    {\n        \"bookId\": 17,\n        \"name\": \"Book17\",\n        \"price\": 0.06839782644850911\n    },\n    {\n        \"bookId\": 18,\n        \"name\": \"Book18\",\n        \"price\": 0.7736877658095697\n    },\n    {\n        \"bookId\": 19,\n        \"name\": \"Book19\",\n        \"price\": 0.6249223278668332\n    },\n    {\n        \"bookId\": 20,\n        \"name\": \"Book20\",\n        \"price\": 0.3411801889214291\n    }\n]\n\n ```"
+      },
+      "response": []
+    },
+    {
+      "name": "5. get books by id using spring reactive approach",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/route/book/20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "route",
+            "book",
+            "20"
+          ]
+        },
+        "description": "``` json\n{\n    \"bookId\": 20,\n    \"name\": \"Book20\",\n    \"price\": 0.6536061194280237\n}\n\n ```"
+      },
+      "response": []
+    },
+    {
+      "name": "6. check global exception handler message using traditional approach",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/route/book/21",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "route",
+            "book",
+            "21"
+          ]
+        },
+        "description": "```\n /* handled BookAPIException using spring reactive approach*/\n    public Mono<ServerResponse> getBookById(ServerRequest request) {\n        int id = Integer.parseInt(request.pathVariable(\"bookId\"));\n        Mono<Book> bookMono = bookRepository.getBooks()\n                .filter(book -> book.getBookId() == id)\n                .next().switchIfEmpty(Mono.error(new BookAPIException(\"Book not found with bookId : \"+id)));\n        return ServerResponse.ok().body(bookMono, Book.class);\n    }\n\n\nresponse:\n\nThese below attributes are custom\n{\n    \"endpoint url \": \"/route/book/21\",\n    \"message\": \"Book not found with bookId : 21\"\n}\n\n ```"
+      },
+      "response": []
+    }
+  ]
+}
