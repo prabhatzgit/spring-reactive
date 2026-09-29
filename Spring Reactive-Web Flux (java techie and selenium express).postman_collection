@@ -1,0 +1,496 @@
+{
+  "info": {
+    "_postman_id": "0df31b1c-e5d6-4178-976e-588a11c59953",
+    "name": "Spring Reactive/Web Flux",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1314281"
+  },
+  "item": [
+    {
+      "name": "selenium-express",
+      "item": [
+        {
+          "name": "1_basic-concept",
+          "item": [
+            {
+              "name": "1 hello request",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"productName\": \"iPhone 17 Pro\",\r\n    \"productDescription\" : \"iPhone 17 Pro is a smart phone from Apple\",\r\n    \"productPrice\": 150000\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/hello",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "hello"
+                  ]
+                },
+                "description": "``` json\n[\n    \"hello\",\n    \"world\",\n    \"hi\",\n    \"everyone\"\n]\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "2 drawback of blocking call",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/understanding-drawback-of-blocking-call",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "understanding-drawback-of-blocking-call"
+                  ]
+                },
+                "description": "``` json\n[\n    \"hello\",\n    \"world\",\n    \"hi\",\n    \"everyone\"\n]\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "3 benefits of non-blocking call using Flux",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/benefits-of-asynchronous-call-using-flux",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "benefits-of-asynchronous-call-using-flux"
+                  ]
+                },
+                "description": "```\nhello -> 2s -> world -> 2s -> hi -> 2s -> everyone\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "4 benefits of non-blocking call using Mono",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/benefits-of-asynchronous-call-using-mono",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "benefits-of-asynchronous-call-using-mono"
+                  ]
+                },
+                "description": "``` json\nPrabhat\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "5 functional programming",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/hello-webflux-in-functional-programming",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "hello-webflux-in-functional-programming"
+                  ]
+                },
+                "description": "``` json\nConnection closed\n16:09:35.221\nspring-reactive\n16:09:35.165\nlearning\n16:09:33.157\nworld\n16:09:31.139\nhello\n16:09:29.189\nConnected to http://localhost:8080/hello-webflux-in-functional-programming\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "6 functional programming better way",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/hello-webflux-in-functional-programming-modified",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "hello-webflux-in-functional-programming-modified"
+                  ]
+                },
+                "description": "``` json\nConnection closed\n16:26:47.660\nspring-reactive\n16:26:47.653\nlearning\n16:26:47.653\nPrabhat Learns Spring Reactive by Selenium Express\n16:26:47.652\nworld\n16:26:47.652\nhello\n16:26:47.651\nConnected to http://localhost:8080/hello-webflux-in-functional-programming-modified\n16:26:47.649\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "7 functional programming passing path variable",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/hello/prabhat",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "hello",
+                    "prabhat"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "8 andRoute function",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/hi",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "hi"
+                  ]
+                },
+                "description": "```\nPrabhat -> 2s -> Ranjan -> 2s -> Mahanty -> PrabhatRanjanMahanty\n\n ```"
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "2_webflux-r2dbc",
+          "item": [
+            {
+              "name": "1 flux-test",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/test",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "test"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2 test delay",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/test-delay",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "test-delay"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3 get students by flux",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/students",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "students"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "4 get student from db",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/students-db-call",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "students-db-call"
+                  ]
+                },
+                "description": "``` json\nConnection closed\n22:10:31.040\n{\"studentId\":6,\"studentName\":\"Peter\",\"studentAge\":34}\n22:10:30.952\n{\"studentId\":5,\"studentName\":\"John\",\"studentAge\":35}\n22:10:29.944\n{\"studentId\":4,\"studentName\":\"Diana Prince\",\"studentAge\":21}\n22:10:28.928\n{\"studentId\":3,\"studentName\":\"Charlie Brown\",\"studentAge\":19}\n22:10:27.921\n{\"studentId\":2,\"studentName\":\"Bob Smith\",\"studentAge\":22}\n22:10:26.904\n{\"studentId\":1,\"studentName\":\"Alice Johnson\",\"studentAge\":20}\n22:10:26.053\nConnected to http://localhost:8080/students-db-call\n22:10:25.952\n\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "5 fetch delayed query response",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/students-db-side-delay-fetch-call",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "students-db-side-delay-fetch-call"
+                  ]
+                },
+                "description": "``` json\nConnection closed\n22:15:39.677\n{\"studentId\":6,\"studentName\":\"Peter\",\"studentAge\":34}\n22:15:39.670\n{\"studentId\":5,\"studentName\":\"John\",\"studentAge\":35}\n22:15:38.665\n{\"studentId\":4,\"studentName\":\"Diana Prince\",\"studentAge\":21}\n22:15:37.665\n{\"studentId\":3,\"studentName\":\"Charlie Brown\",\"studentAge\":19}\n22:15:36.628\n{\"studentId\":2,\"studentName\":\"Bob Smith\",\"studentAge\":22}\n22:15:35.614\n{\"studentId\":1,\"studentName\":\"Alice Johnson\",\"studentAge\":20}\n22:15:34.886\nConnected to http://localhost:8080/students-db-side-delay-fetch-call\n22:15:34.698\n\n ```"
+              },
+              "response": []
+            },
+            {
+              "name": "6 fetch delayed query response using functional programming",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/students-functional-programming",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "students-functional-programming"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "7 fetch mono response by path variable",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/students-functional-programming/Alice Johnson",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "students-functional-programming",
+                    "Alice Johnson"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "8 fetch mono response by query param",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/students-functional-programming-by-query-param?student_name=Alice Johnson",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "students-functional-programming-by-query-param"
+                  ],
+                  "query": [
+                    {
+                      "key": "student_name",
+                      "value": "Alice Johnson"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "java-techie",
+      "item": [
+        {
+          "name": "1 static data and traditional approach",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2 using reactive approach",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/customers/reactive-stream",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customers",
+                "reactive-stream"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3 access customer path variable",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/router/customers/8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "router",
+                "customers",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4 get customers using router and rest approach",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/router/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "router",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6 create a customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 12,\r\n    \"name\": \"Krishna\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/router/customer/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "router",
+                "customer",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5 get customers using router and reactive approach",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/customers/reactive-stream",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customers",
+                "reactive-stream"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

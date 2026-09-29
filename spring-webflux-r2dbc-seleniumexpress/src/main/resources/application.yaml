@@ -1,0 +1,23 @@
+spring:
+  application:
+    name=spring-webflux-r2dbc-seleniumexpress
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/sample_db
+    username: postgres
+    password: postgres
+
+    datasource: # Optional, only if you also use JDBC in parallel
+      driver-class-name: org.postgresql.Driver
+
+    sql:
+      init:
+        mode: always   # Run schema.sql/data.sql if present
+
+  logging:
+    level:
+      root: INFO
+      org.springframework.r2dbc: DEBUG
+      org.springframework.data.r2dbc: DEBUG
+  profiles:
+    active:
+      - dev
